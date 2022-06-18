@@ -13,8 +13,7 @@ fn main() {
             .from_env_lossy()
     };
 
-    let mut file_appender = tracing_appender::rolling::minutely(log_dir, format!("{}.log", "heyo"));
-    file_appender.keep_last_n_logs(2);
+    let file_appender = tracing_appender::rolling::minutely(log_dir, format!("{}.log", "heyo"));
     let (non_blocking, _guard) = tracing_appender::non_blocking(file_appender);
 
     // start logger, after we acquire the bundle identifier
