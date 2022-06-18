@@ -1,0 +1,11 @@
+[package]
+name = "debug"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tracing = "0.1.31"
+tracing-appender = { path = "../tracing/tracing-appender" }
+#tracing-appender = "0.2.2"
+tracing-bunyan-formatter = "0.3.2"
+tracing-subscriber = { version = "0.3.11", features = ["env-filter"] }
